@@ -1,0 +1,395 @@
+body {
+    margin: 0;
+    font-family: var();
+}
+
+.header ul a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    transition: .3s;
+}
+
+.header ul li a:hover {
+    color: gray;
+    border-bottom: 1px solid black;
+}
+
+
+.header .hover:hover .hidden {
+    display: block;
+}
+
+.header .hidden {
+    position: absolute;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    display: none;
+    background-color: white;
+    width: 290px;
+
+}
+
+.header .hidden li a {
+    width: 270px;
+}
+
+.header .hidden li a:hover {
+    margin-left: 10px;
+    background-color: rgb(240, 240, 240);
+}
+
+
+/*footer*/
+
+.footer a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: rgb(64, 64, 64);
+}
+
+.footer {
+    background-color: rgb(240, 240, 240);
+}
+
+.footer div {
+    text-align: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .menu {
+        visibility: hidden;
+    }
+
+    .timenu {
+        visibility: visible;
+    }
+
+    .menu1 {
+        visibility: visible;
+    }
+
+
+}
+
+
+/*IMG Header*/
+
+
+@media screen and (max-width: 700px) {
+    .imgheader .imgheadercontent {
+        display: none;
+    }
+}
+
+
+
+
+/*Our Doctor*/
+
+.ourdoctors .col-xl-9 p {
+    padding-left: 50px;
+    height: 250px;
+}
+
+@media screen and (max-width: 1200px) {
+    .ourdoctors .col-xl-9 p {
+        padding-left: 0;
+        padding-top: 20px;
+        height: 325px;
+        font-size: 12px;
+    }
+
+
+}
+
+
+
+
+/*phần vấn đề*/
+
+.ourproblems .hoverimg {
+    overflow: hidden;
+    height: 225px;
+}
+
+
+.ourproblems img {
+    height: 225px;
+    width: 325px;
+    transition: .3s;
+}
+
+.ourproblems img:hover {
+    height: 235px;
+    width: 335px;
+}
+
+.ourproblems p {
+    height: 155px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .ourproblems p {
+        height: 125px;
+    }
+}
+
+
+
+
+/*ourproduct*/
+.ourproduct {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 60%;
+        margin: auto;
+    }
+}
+
+
+
+
+
+/*testimonials*/
+.testimonials .content {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 992px) {
+    .testimonials img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+
+
+
+/*phần problems we treat*/
+/*phần relieve stress*/
+
+.problemsdetail{
+    padding-bottom: 50px;
+}
+.problemsdetail .head {
+    position: relative;
+}
+
+.problemsdetail .head h1 {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 300px;
+    left: 10%;
+    top:35%;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+@media only screen and (max-width:500px) {
+    .body img {
+        width: 100%;
+    }
+}
+
+/*phan product*/
+.product .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 225px;
+    text-align: center;
+}
+
+
+
+
+
+/*phần productdetail*/
+.productdetail {
+    padding: 50px 0px 25px 0px;
+}
+
+.productdetail .rating {
+    direction: rtl;
+    float: left;
+}
+
+.productdetail .rating>input {
+    display: none
+}
+
+.productdetail .rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 25px;
+    font-weight: 300;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.productdetail .rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.productdetail .rating>label:hover:before,
+.productdetail .rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.productdetail .rating>input:checked~label:before {
+    opacity: 1
+}
+
+.productdetail .rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+.productdetail .rating-submit {
+    border-radius: 15px;
+    color: #fff;
+    height: 49px;
+}
+
+
+.productdetail .rating-submit:hover {
+
+    color: #fff;
+}
+
+
+/*phanabout*/
+.pageabout {
+    padding: 150px 0px 50px 0px;
+}
+
+/*phancontact*/
+.pagecontact {
+    padding: 75px 0px 75px 0px
+}
+
+
+.pagecontact table tr td {
+    padding: 10px;
+}
+
+
+
+
+
+/*phần pageshopping*/
+.pageshopping {
+    padding: 150px 0px 75px 0px;
+}
+
+/*phần checkout*/
+.checkout {
+    padding-top: 125px;
+}
+
+.checkout .card {
+    background: rgb(74, 74, 74);
+    color: #fff;
+    width: 410px !important;
+}
+
+.checkout .mrow {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.checkout img {
+    margin-right: 10px;
+}
+
+.checkout .main span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.checkout .mrow img:hover {
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+}
+
+.checkout .btn-primary {
+    border: none;
+    border-radius: 30px;
+}
+
+.checkout h5 {
+    padding-top: 8px;
+}
+
+.checkout .form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.checkout .form-control-placeholder {
+    position: absolute;
+    top: 6px;
+    padding: 7px 0 0 10px;
+    transition: all 200ms;
+    opacity: 0.5;
+    color: #dae0e5 !important;
+    font-size: 75%;
+}
+
+.checkout .form-control:focus+.form-control-placeholder,
+.checkout .form-control:valid+.form-control-placeholder {
+    font-size: 75%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    top: 10px;
+}
+
+.checkout .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff !important;
+    border-radius: 0;
+    outline: 0;
+}
+
+.checkout .form-control:focus,
+.checkout .form-control:after {
+    outline-width: 0;
+    border-bottom: 1px solid #fff !important;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    color: #dae0e5;
+    letter-spacing: 1px;
+}
+
+
+/*phan signin*/
+.pagelogin {
+    height: 700px;
+    padding-top: 150px;
+}
+
+@media only screen and (max-width:768px) {
+    .pagelogin {
+        height: 1000px;
+        padding-top: 150px;
+    }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!--link icon-->
+    <script src="https://kit.fontawesome.com/1aa4f49900.js" crossorigin="anonymous"></script>
+
+
+    <!--link jquery-->
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!--link bootstrap5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--link angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!--link css-->
+    <link rel="stylesheet" href="main.css">
+
+
+    <!--link aos-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <title>ZaraTherapyClinic</title>
+
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div class="pageshopping" data-aos="zoom-out-down">
+        <div class="container main-section">
+            <div class="row">
+                <div class="col-lg-12 pb-2">
+                    <h2> Invoice And Payment Information </h2>
+                </div>
+                <div class="col-lg-12 pl-3 pt-3">
+                    <table class="table table-hover border bg-white">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h4> <b> Product Details </b> </h4>
+                                </th>
+                                <th>
+                                    <h4> <b> Price </h4> <b>
+                                </th>
+                                <th style="width:10%;">
+                                    <h4> <b> Quantity <b> </h4>
+                                </th>
+                                <th>
+                                    <h4> <b> Subtotal <b> </h4>
+                                </th>
+                                <th>
+                                    <h4> <b> Action <b> </h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-lg-2 Product-img">
+                                            <img src="demo1.png" alt="..." class="img-responsive" />
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <h5 class="nomargin"> <b> Name Product </b> </h5>
+                                            <p> Information About Product. </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td> <strong> 50,000 </strong> </td>
+                                <td data-th="Quantity">
+                                    <b> <input type="number" class="form-control text-center" value="1"> </b>
+                                </td>
+                                <td> <strong> 50,000 </strong> </td>
+                                <td class="actions" data-th="" style="width:10%;">
+
+                                    <button class="btn btn-danger btn-sm"> <i class="fa fa-trash-o"> </i> </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-lg-2 Product-img">
+                                            <img src="demo.png" alt="..." class="img-responsive" />
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <h5 class="nomargin"> <b> Name Product </b> </h5>
+                                            <p> Information About Product. </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td> <strong> 30,000 </strong> </td>
+                                <td data-th="Quantity">
+                                    <b> <input type="number" class="form-control text-center" value="1"> </b>
+                                </td>
+                                </td>
+                                <td> <strong> 30,000 </strong> </td>
+                                <td class="actions" data-th="" style="width:10%;">
+
+                                    <button class="btn btn-danger btn-sm"> <i class="fa fa-trash-o"> </i> </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-lg-2 Product-img">
+                                            <img src="demo1.png" alt="..." class="img-responsive">
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <h5 class="nomargin"> <b> Name Product </b> </h5>
+                                            <p> Information About Product </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td> <strong> 50,000 </strong> </td>
+                                <td data-th="Quantity">
+                                    <b> <input type="number" class="form-control text-center" value="1"> </b>
+                                </td>
+                                </td>
+                                <td> <strong> 50,000 </strong> </td>
+                                <td class="actions" data-th="" style="width:10%;">
+
+                                    <button class="btn btn-danger btn-sm"> <i class="fa fa-trash-o"> </i> </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td> <a href="" class="btn btn-success "> <i class="fa fa-angle-left"> </i> Continue
+                                        Shopping </a> </td>
+                                <td colspan="2" class="hidden-xs"> </td>
+                                <td class="hidden-xs text-center" style="width:10%;"> <strong> Total Price : 130,000
+                                    </strong> </td>
+                                <td> <a href="#!CheckOut" class="btn btn-success btn-block"> Checkout <i
+                                            class="fa fa-angle-right">
+                                        </i> </a> </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+    <script src="main.js"></script>
+</body>
+
+</html>
