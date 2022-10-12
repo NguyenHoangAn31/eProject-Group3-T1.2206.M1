@@ -8,7 +8,7 @@ var header = `<div class="header position-fixed top-0 end-0 start-0" style="z-in
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav w-100 justify-content-evenly" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+            <ul class="navbar-nav w-100 justify-content-evenly" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                 <li class="nav-item">
                     <a class="d-block p-2" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
                 </li>
