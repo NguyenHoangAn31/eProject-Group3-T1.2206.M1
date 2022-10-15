@@ -77,8 +77,10 @@ var footer = `<div class="footer">
 </div>`
 
 
-document.getElementById("header").innerHTML = header;
-document.getElementById("footer").innerHTML = footer;
+
+$("#header").html(header);
+$("#footer").html(footer);
+
 
 AOS.init();
 
@@ -125,7 +127,8 @@ mang.forEach(element => {
             </div>
     </div>`;
 });
-document.getElementById("checkcheck").innerHTML = check;
+
+$("#checkcheck").html(check);
 
 $('.owl-carousel').owlCarousel({
     loop: true,
@@ -145,9 +148,16 @@ $('.owl-carousel').owlCarousel({
 })
 
 
+
+
+
+
+
+
+
 function productdetail(n){
     var indexarr = mang[n];
-    var contain = `<div class="productdetail" id="productdetail">
+    var contain = `<div class="productdetail" id="productdetail" style="padding-top:100px">
 
     <div class="h1 text-center pb-5">Product Detail</div>
     <div class="row container justify-content-center" style="margin:auto">
@@ -184,5 +194,5 @@ function productdetail(n){
 
     </div>
   </div>`;
-    document.getElementById("productdetail").innerHTML = contain;
+    $("#productdetail").html(contain);
 }
