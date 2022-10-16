@@ -114,8 +114,8 @@ for (var i = 0; i < 5; i++) {
                     <img onclick="productdetail(${mang[i].id})" src="${mang[i].imgsrc}"   width="100%" height="175">
                     <h3>${mang[i].name}</h3>
                     <p class="price">$${mang[i].pricenew}</p>
-                    <p><button class="btn btn-primary">Add to Cart</button></p>
-                </div>
+                    <p><button data-imgsrc="${mang[i].imgsrc}" data-name="${mang[i].name}" data-pricenew="${mang[i].pricenew}" class="add-to-cart btn btn-primary">Add to Cart</button></p>
+                    </div>
         </div>`
 }
 $("#page1").html(page1)
@@ -129,8 +129,8 @@ for (var i = 5; i < 10; i++) {
                     <img onclick="productdetail(${mang[i].id})" src="${mang[i].imgsrc}"   width="100%" height="175">
                     <h3>${mang[i].name}</h3>
                     <p class="price">$${mang[i].pricenew}</p>
-                    <p><button class="btn btn-primary">Add to Cart</button></p>
-                </div>
+                    <p><button data-imgsrc="${mang[i].imgsrc}" data-name="${mang[i].name}" data-pricenew="${mang[i].pricenew}" class="add-to-cart btn btn-primary">Add to Cart</button></p>
+                    </div>
         </div>`
 }
 $("#page2").html(page2)
@@ -144,8 +144,8 @@ for (var i = 10; i < 15; i++) {
                     <img onclick="productdetail(${mang[i].id})" src="${mang[i].imgsrc}"   width="100%" height="175">
                     <h3>${mang[i].name}</h3>
                     <p class="price">$${mang[i].pricenew}</p>
-                    <p><button class="btn btn-primary">Add to Cart</button></p>
-                </div>
+                    <p><button data-imgsrc="${mang[i].imgsrc}" data-name="${mang[i].name}" data-pricenew="${mang[i].pricenew}" class="add-to-cart btn btn-primary">Add to Cart</button></p>
+                    </div>
         </div>`
 }
 $("#page3").html(page3)
@@ -159,8 +159,8 @@ for (var i = 15; i < 20; i++) {
                     <img onclick="productdetail(${mang[i].id})" src="${mang[i].imgsrc}"   width="100%" height="175">
                     <h3>${mang[i].name}</h3>
                     <p class="price">$${mang[i].pricenew}</p>
-                    <p><button class="btn btn-primary">Add to Cart</button></p>
-                </div>
+                    <p><button data-imgsrc="${mang[i].imgsrc}" data-name="${mang[i].name}" data-pricenew="${mang[i].pricenew}" class="add-to-cart btn btn-primary">Add to Cart</button></p>
+                    </div>
         </div>`
 }
 $("#page4").html(page4)
