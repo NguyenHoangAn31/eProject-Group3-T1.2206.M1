@@ -1,12 +1,14 @@
 cart = [];
 
+
 var shoppingCart = (function () {
 
-    function haha(name, pricenew, imgsrc, content) {
+
+    function haha(name, pricenew, imgsrc, count) {
         this.name = name;
         this.pricenew = pricenew;
         this.imgsrc = imgsrc;
-        this.content = content
+        this.count = count;
 
     }
 
@@ -29,14 +31,14 @@ var shoppingCart = (function () {
 
 
     //add  
-    obj.addItemToCart = function (name, pricenew, imgsrc, content) {
+    obj.addItemToCart = function (name, pricenew, imgsrc, count) {
         for (var i in cart) {
             if (cart[i].name === name) {
                 alert('san pham da co trong gio hang')
                 return;
             }
         }
-        var item = new haha(name, pricenew, imgsrc, content);
+        var item = new haha(name, pricenew, imgsrc, count);
         cart.push(item);
         saveCart();
     }
@@ -50,6 +52,40 @@ var shoppingCart = (function () {
             }
         }
         saveCart();
+    }
+    //plus count
+    obj.plus = function (name) {
+        for (var i in cart) {
+            if (name === cart[i].name) {
+                cart[i].count ++;
+                saveCart();
+            }
+        }
+    }
+
+    //subtract count
+    obj.substract = function (name) {
+        for (var i in cart) {
+            if (name === cart[i].name) {
+                cart[i].count --;
+                saveCart();
+                if(cart[i].count==0){
+                    cart.splice(i, 1);
+                    saveCart();
+                }
+                
+            }
+            
+        }
+    }
+
+    //total 
+    obj.total = function(){
+        var total = 0;
+        for(var i in cart){
+            total += cart[i].count * cart[i].pricenew
+        }
+        return total;
     }
 
 
@@ -82,7 +118,7 @@ $('.add-to-cart').click(function (event) {
     var imgsrc = $(this).data('imgsrc');
     var content = $(this).data('content');
     var pricenew = Number($(this).data('pricenew'));
-    shoppingCart.addItemToCart(name, pricenew, imgsrc, content);
+    shoppingCart.addItemToCart(name, pricenew, imgsrc, 1);
     displayCart();
 
 });
@@ -95,7 +131,11 @@ $('.add-to-cart').click(function (event) {
 
 
 
+
+
+
 function displayCart() {
+
     var cartArray = shoppingCart.listCart();
     var output = `<tr>
     <th class="w-50">
@@ -130,17 +170,17 @@ function displayCart() {
         </td>
 
         <td>
-          <div class="btn-group mt-5">
-            <button type="button" class="btn btn-outline-primary" style="border-right: none;">-</button>
-            <button type="button" class="btn btn-outline-primary" style="border-left: none;border-right: none;">1</button>
-            <button type="button" class="btn btn-outline-primary" style="border-left: none;">+</button>
+          <div class="btn-group" style="margin-top:42px">
+            <button  data-name="${v.name}" type="button" class="btn btn-outline-primary subtract" style="border-right: none;">-</button>
+            <input type="button" value="${v.count}" class="btn btn-outline-primary" style="border-left: none;border-right: none;">
+            <button data-name="${v.name}" type="button" class="btn btn-outline-primary plus" style="border-left: none;">+</button>
           </div>
         </td>
 
-        <td><p class="h6 mt-5">$${v.pricenew}</td>
+        <td><p class="h6 mt-5">$${v.pricenew*v.count}</td>
 
         <td >
-            <button class="delete-item btn btn-danger btn-sm mt-5" data-name="${v.name}"> <i class="fa fa-trash-o"> </i> </button>
+            <button class="delete-item btn btn-danger btn-sm" style="margin-top:42px" data-name="${v.name}"> <i class="fa fa-trash-o"> </i> </button>
         </td>
 
     </tr>
@@ -148,16 +188,18 @@ function displayCart() {
 
     });
 
+
     output += `<tr>
     <td colspan="3"> </td>
 
-    <td class="text-center h4">Total Price : </td>
+    <td class="text-center h4">Total Price : $<span id="total"></span> </td>
 
     <td> 
     <a href="#!CheckOut" class="btn btn-success"> Checkout <i class="fa fa-angle-right"></i> </a> </td>
 </tr>`
 
     document.getElementById('showcart').innerHTML = output
+    document.getElementById('total').innerHTML = shoppingCart.total()
 }
 
 
@@ -168,6 +210,21 @@ $('.show-cart').on("click", ".delete-item", function (event) {
     displayCart();
 })
 
+$('.show-cart').on("click", ".plus", function (event) {
+    var name = $(this).data('name');
+
+    shoppingCart.plus(name);
+    displayCart();
+})
 
 
-displayCart();
+$('.show-cart').on("click", ".subtract", function (event) {
+    var name = $(this).data('name');
+
+    shoppingCart.substract(name);
+    displayCart();
+})
+
+
+
+displayCart()
