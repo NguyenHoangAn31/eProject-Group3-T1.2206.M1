@@ -17,7 +17,7 @@ var header = `<div class="header position-fixed top-0 end-0 start-0" style="z-in
                     <ul class="hidden">
                         <li><a class="d-block p-2" href="relievestress.html">Relieve Stress</a></li>
                         <li><a class="d-block p-2" href="enhancerelaxation.html">Enhance Relaxation</a></li>
-                        <li><a class="d-block p-2" href="impovecirculation.html">Impove Circulation</a></li>
+                        <li><a class="d-block p-2" href="improvecirculation.html">Improve Circulation</a></li>
                         <li><a class="d-block p-2" href="injuryrecovery.html">Injury Recovery</a></li>
                     </ul>
                 </li>
@@ -82,16 +82,16 @@ AOS.init();
 
 
 var mang = [
-    { "id": 0, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product1", "content": "đây là sản phẩm 1", "review": 200 },
-    { "id": 1, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product2", "content": "đây là sản phẩm 2", "review": 178 },
-    { "id": 2, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product3", "content": "đây là sản phẩm 3", "review": 347 },
-    { "id": 3, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product4", "content": "đây là sản phẩm 4", "review": 79 },
-    { "id": 4, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product5", "content": "đây là sản phẩm 5", "review": 183 },
-    { "id": 5, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product6", "content": "đây là sản phẩm 6", "review": 249 },
-    { "id": 6, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product7", "content": "đây là sản phẩm 7", "review": 357 },
-    { "id": 7, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product8", "content": "đây là sản phẩm 8", "review": 173 },
-    { "id": 8, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product9", "content": "đây là sản phẩm 9", "review": 346 },
-    { "id": 9, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product10", "content": "đây là sản phẩm 10", "review": 258 },
+    { "id": 0,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product1",  "content": "đây là sản phẩm 1",  "review": 200 },
+    { "id": 1,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product2",  "content": "đây là sản phẩm 2",  "review": 178 },
+    { "id": 2,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product3",  "content": "đây là sản phẩm 3",  "review": 347 },
+    { "id": 3,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product4",  "content": "đây là sản phẩm 4",  "review": 79 },
+    { "id": 4,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product5",  "content": "đây là sản phẩm 5",  "review": 183 },
+    { "id": 5,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product6",  "content": "đây là sản phẩm 6",  "review": 249 },
+    { "id": 6,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product7",  "content": "đây là sản phẩm 7",  "review": 357 },
+    { "id": 7,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product8",  "content": "đây là sản phẩm 8",  "review": 173 },
+    { "id": 8,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product9",  "content": "đây là sản phẩm 9",  "review": 346 },
+    { "id": 9,  "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product10", "content": "đây là sản phẩm 10", "review": 258 },
     { "id": 10, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product11", "content": "đây là sản phẩm 11", "review": 112 },
     { "id": 11, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product12", "content": "đây là sản phẩm 12", "review": 76 },
     { "id": 12, "pricenew": 20, "priceold": 22, "imgsrc": "IMGS/homepage/doctor1.jpg", "name": "product13", "content": "đây là sản phẩm 13", "review": 87 },
@@ -114,7 +114,6 @@ for (var i = 0; i < 5; i++) {
                     <img onclick="productdetail(${mang[i].id})" src="${mang[i].imgsrc}"   width="100%" height="175">
                     <h3>${mang[i].name}</h3>
                     <p class="price">$${mang[i].pricenew}</p>
-                    <p>${mang[i].content}</p>
                     <p><button class="btn btn-primary">Add to Cart</button></p>
                 </div>
         </div>`
@@ -130,7 +129,6 @@ for (var i = 5; i < 10; i++) {
                     <img onclick="productdetail(${mang[i].id})" src="${mang[i].imgsrc}"   width="100%" height="175">
                     <h3>${mang[i].name}</h3>
                     <p class="price">$${mang[i].pricenew}</p>
-                    <p>${mang[i].content}</p>
                     <p><button class="btn btn-primary">Add to Cart</button></p>
                 </div>
         </div>`
@@ -146,7 +144,6 @@ for (var i = 10; i < 15; i++) {
                     <img onclick="productdetail(${mang[i].id})" src="${mang[i].imgsrc}"   width="100%" height="175">
                     <h3>${mang[i].name}</h3>
                     <p class="price">$${mang[i].pricenew}</p>
-                    <p>${mang[i].content}</p>
                     <p><button class="btn btn-primary">Add to Cart</button></p>
                 </div>
         </div>`
@@ -162,7 +159,6 @@ for (var i = 15; i < 20; i++) {
                     <img onclick="productdetail(${mang[i].id})" src="${mang[i].imgsrc}"   width="100%" height="175">
                     <h3>${mang[i].name}</h3>
                     <p class="price">$${mang[i].pricenew}</p>
-                    <p>${mang[i].content}</p>
                     <p><button class="btn btn-primary">Add to Cart</button></p>
                 </div>
         </div>`
@@ -183,9 +179,8 @@ mang.forEach(element => {
                 <img onclick="productdetail(${element.id})" src="${element.imgsrc}"   width="100%" height="175">
                 <h3>${element.name}</h3>
                 <p class="price">$${element.pricenew}</p>
-                <p>${element.content}</p>
-                <p><button class="btn btn-primary">Add to Cart</button></p>
-            </div>
+                <p><button data-imgsrc="${element.imgsrc}" data-name="${element.name}" data-pricenew="${element.pricenew}" class="add-to-cart btn btn-primary">Add to Cart</button></p>
+            </div> 
     </div>`;
 });
 
