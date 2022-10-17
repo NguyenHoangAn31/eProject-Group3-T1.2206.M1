@@ -57,7 +57,7 @@ var shoppingCart = (function () {
     obj.plus = function (name) {
         for (var i in cart) {
             if (name === cart[i].name) {
-                cart[i].count ++;
+                cart[i].count++;
                 saveCart();
             }
         }
@@ -67,22 +67,22 @@ var shoppingCart = (function () {
     obj.substract = function (name) {
         for (var i in cart) {
             if (name === cart[i].name) {
-                cart[i].count --;
+                cart[i].count--;
                 saveCart();
-                if(cart[i].count==0){
+                if (cart[i].count == 0) {
                     cart.splice(i, 1);
                     saveCart();
                 }
-                
+
             }
-            
+
         }
     }
 
     //total 
-    obj.total = function(){
+    obj.total = function () {
         var total = 0;
-        for(var i in cart){
+        for (var i in cart) {
             total += cart[i].count * cart[i].pricenew
         }
         return total;
@@ -124,9 +124,16 @@ $('.add-to-cart').click(function (event) {
 });
 
 
+$('.productdetail').on("click", ".addtocart", function (event) {
+    event.preventDefault();
 
-
-
+    var name = $(this).data('name');
+    var imgsrc = $(this).data('imgsrc');
+    var content = $(this).data('content');
+    var pricenew = Number($(this).data('pricenew'));
+    shoppingCart.addItemToCart(name, pricenew, imgsrc, 1);
+    displayCart();
+})
 
 
 
@@ -160,27 +167,27 @@ function displayCart() {
         output += `<tr>
     
         <td>
-           <img src="${v.imgsrc}" width="125" height="125">  
+           <img src="${v.imgsrc}" width="75" height="125">  
            <p class="d-inline-block ps-3">${v.name}</p>
         </td>
         
 
         <td>
-        <p class="h6 mt-5">$${v.pricenew}</p>
+        <p class="h6 mt-5 text-danger">$${v.pricenew}</p>
         </td>
 
         <td>
-          <div class="btn-group" style="margin-top:42px">
+          <div class="btn-group" style="margin-top:38px">
             <button  data-name="${v.name}" type="button" class="btn btn-outline-primary subtract" style="border-right: none;">-</button>
             <input type="button" value="${v.count}" class="btn btn-outline-primary" style="border-left: none;border-right: none;">
             <button data-name="${v.name}" type="button" class="btn btn-outline-primary plus" style="border-left: none;">+</button>
           </div>
         </td>
 
-        <td><p class="h6 mt-5">$${v.pricenew*v.count}</td>
+        <td><p class="h6 mt-5 text-danger">$${v.pricenew * v.count}</td>
 
         <td >
-            <button class="delete-item btn btn-danger btn-sm" style="margin-top:42px" data-name="${v.name}"> <i class="fa fa-trash-o"> </i> </button>
+            <button class="delete-item btn btn-danger btn-sm" style="margin-top:38px" data-name="${v.name}"> <i class="fa fa-trash-o"> </i> </button>
         </td>
 
     </tr>
@@ -190,9 +197,9 @@ function displayCart() {
 
 
     output += `<tr>
-    <td colspan="3"> </td>
+    <td colspan="2"> </td>
 
-    <td class="text-center h4">Total Price : $<span id="total"></span> </td>
+    <td colspan="2" class="text-center h4">Total Price : $<span id="total"></span> </td>
 
     <td> 
     <a href="#!CheckOut" class="btn btn-success"> Checkout <i class="fa fa-angle-right"></i> </a> </td>
@@ -209,6 +216,7 @@ $('.show-cart').on("click", ".delete-item", function (event) {
     shoppingCart.removeItemFromCartAll(name);
     displayCart();
 })
+
 
 $('.show-cart').on("click", ".plus", function (event) {
     var name = $(this).data('name');
