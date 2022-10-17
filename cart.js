@@ -34,7 +34,7 @@ var shoppingCart = (function () {
     obj.addItemToCart = function (name, pricenew, imgsrc, count) {
         for (var i in cart) {
             if (cart[i].name === name) {
-                alert('san pham da co trong gio hang')
+                alert('Products Already In The Cart')
                 return;
             }
         }
@@ -87,6 +87,7 @@ var shoppingCart = (function () {
         }
         return total;
     }
+    //total count
 
 
     obj.listCart = function () {
@@ -102,7 +103,6 @@ var shoppingCart = (function () {
         }
         return cartCopy;
     }
-
     return obj;
 })();
 
@@ -116,11 +116,9 @@ $('.add-to-cart').click(function (event) {
 
     var name = $(this).data('name');
     var imgsrc = $(this).data('imgsrc');
-    var content = $(this).data('content');
     var pricenew = Number($(this).data('pricenew'));
     shoppingCart.addItemToCart(name, pricenew, imgsrc, 1);
     displayCart();
-
 });
 
 
@@ -129,7 +127,6 @@ $('.productdetail').on("click", ".addtocart", function (event) {
 
     var name = $(this).data('name');
     var imgsrc = $(this).data('imgsrc');
-    var content = $(this).data('content');
     var pricenew = Number($(this).data('pricenew'));
     shoppingCart.addItemToCart(name, pricenew, imgsrc, 1);
     displayCart();
@@ -140,41 +137,26 @@ $('.productdetail').on("click", ".addtocart", function (event) {
 
 
 
-
 function displayCart() {
 
     var cartArray = shoppingCart.listCart();
+    var totalcount = cartArray.length
     var output = `<tr>
-    <th class="w-50">
-      <h5> <b> Product Details </b> </h4>
-    </th>
-    <th>
-      <h5> <b> Price </h4> <b>
-    </th>
-    <th>
-      <h5> <b> Quantity <b> </h4>
-    </th>
-    <th>
-      <h5> <b> Subtotal <b> </h4>
-    </th>
-    <th>
-      <h5> <b> Action <b> </h4>
-    </th>
+    <th class="w-50"><h5> <b> Product Details </b> </h4></th>
+    <th><h5> <b> Price </h4> <b></th>
+    <th><h5> <b> Quantity <b> </h4></th>
+    <th><h5> <b> Subtotal <b> </h4></th>
+    <th><h5> <b> Action <b> </h4></th>
   </tr>`;
 
     $.each(cartArray, function (k, v) {
 
         output += `<tr>
     
-        <td class="text-start ps-5">
-           <img src="${v.imgsrc}" width="75" height="125">  
-           <p class="d-inline-block ps-3">${v.name}</p>
-        </td>
+        <td class="text-start ps-5"><img src="${v.imgsrc}" width="75" height="125">  <p class="d-inline-block ps-3">${v.name}</p></td>
         
 
-        <td>
-        <p class="h6 mt-5 text-danger">$${v.pricenew}</p>
-        </td>
+        <td><p class="h6 mt-5 text-danger">$${v.pricenew}</p></td>
 
         <td>
           <div class="btn-group" style="margin-top:38px">
@@ -186,9 +168,7 @@ function displayCart() {
 
         <td><p class="h6 mt-5 text-danger">$${v.pricenew * v.count}</td>
 
-        <td >
-            <button class="delete-item btn btn-danger btn-sm" style="margin-top:38px" data-name="${v.name}"> <i class="fa fa-trash-o"> </i> </button>
-        </td>
+        <td ><button class="delete-item btn btn-danger btn-sm" style="margin-top:38px" data-name="${v.name}"> <i class="fa fa-trash-o"> </i> </button></td>
 
     </tr>
     `
@@ -205,8 +185,9 @@ function displayCart() {
     <a href="#!CheckOut" class="btn btn-success"> Checkout <i class="fa fa-angle-right"></i> </a> </td>
 </tr>`
 
-    document.getElementById('showcart').innerHTML = output
-    document.getElementById('total').innerHTML = shoppingCart.total()
+    document.getElementById('totalcount').innerHTML = totalcount;
+    document.getElementById('showcart').innerHTML = output;
+    document.getElementById('total').innerHTML = shoppingCart.total();
 }
 
 

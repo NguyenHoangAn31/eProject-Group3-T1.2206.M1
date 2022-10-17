@@ -63,21 +63,6 @@ body {
 }
 
 
-@media screen and (max-width: 1200px) {
-    .menu {
-        visibility: hidden;
-    }
-
-    .timenu {
-        visibility: visible;
-    }
-
-    .menu1 {
-        visibility: visible;
-    }
-
-
-}
 
 
 /*IMG Header*/
@@ -155,7 +140,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    .card {
+    .ourproduct .card {
         width: 60%;
         margin: auto;
     }
