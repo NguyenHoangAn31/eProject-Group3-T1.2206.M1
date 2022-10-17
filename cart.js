@@ -166,7 +166,7 @@ function displayCart() {
 
         output += `<tr>
     
-        <td>
+        <td class="text-start ps-5">
            <img src="${v.imgsrc}" width="75" height="125">  
            <p class="d-inline-block ps-3">${v.name}</p>
         </td>
