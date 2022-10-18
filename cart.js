@@ -188,6 +188,7 @@ function displayCart() {
     document.getElementById('totalcount').innerHTML = totalcount;
     document.getElementById('showcart').innerHTML = output;
     document.getElementById('total').innerHTML = shoppingCart.total();
+
 }
 
 
