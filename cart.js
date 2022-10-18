@@ -104,6 +104,7 @@ var shoppingCart = (function () {
         return cartCopy;
     }
     return obj;
+
 })();
 
 
@@ -184,10 +185,11 @@ function displayCart() {
     <td> 
     <a href="#!CheckOut" class="btn btn-success"> Checkout <i class="fa fa-angle-right"></i> </a> </td>
 </tr>`
-
     document.getElementById('totalcount').innerHTML = totalcount;
+
     document.getElementById('showcart').innerHTML = output;
     document.getElementById('total').innerHTML = shoppingCart.total();
+
 
 }
 
