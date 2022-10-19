@@ -210,7 +210,7 @@ function productdetail(n) {
     var indexarr = mang[n];
     var contain = `<div style="padding-top:100px" class="sanphamchitiet">
 
-    <a href="" class="btn btn-success ms-5">< Previous<a>
+    <div class="container"><a href="" class="btn btn-success ms-5">< Previous<a><div>
     <div class="h1 text-center pb-5">Product Detail</div>
 
 
