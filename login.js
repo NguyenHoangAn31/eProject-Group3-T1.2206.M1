@@ -1,9 +1,9 @@
 listaccount = []
-if (JSON.parse(localStorage.getItem('listaccount')) == null) {
+if (JSON.parse(sessionStorage.getItem('listaccount')) == null) {
     listaccount = []
 }
 else {
-    listaccount = JSON.parse(localStorage.getItem('listaccount'))
+    listaccount = JSON.parse(sessionStorage.getItem('listaccount'))
 }
 
 
@@ -33,7 +33,7 @@ function checkaccount() {
         for (var i in listaccount) {
             if (listaccount[i].name == checkobject.name && listaccount[i].password == checkobject.password) {
                 accountcurrent.push(checkobject);
-                localStorage.setItem('accountcurrent', JSON.stringify(accountcurrent))
+                sessionStorage.setItem('accountcurrent', JSON.stringify(accountcurrent))
                 alert('Successfuly');
                 return
             }
@@ -60,14 +60,14 @@ function creataccount() {
         creataccountobj.name = fvsl;
         creataccountobj.password = password;
         listaccount.push(creataccountobj);
-        localStorage.setItem('listaccount', JSON.stringify(listaccount))
+        sessionStorage.setItem('listaccount', JSON.stringify(listaccount))
         alert('Sucessfuly !')
     }
 }
 
 
 function displaymember(){
-    var containxx = JSON.parse(localStorage.getItem('accountcurrent'))
+    var containxx = JSON.parse(sessionStorage.getItem('accountcurrent'))
     document.getElementById('accountmember').innerHTML =  containxx[0].name
 
 }
