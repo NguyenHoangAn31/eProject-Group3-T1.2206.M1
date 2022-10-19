@@ -31,7 +31,7 @@ var header = `<div class="header position-fixed top-0 end-0 start-0" style="z-in
                     <a class="d-block p-2" href="shoppingcart.html"><i class="fa-solid fa-cart-shopping"><span id="totalcount" class="badge bg-danger"></span></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-block p-2" href="login.html">Login <i class="fa-solid fa-circle-user"></i></a>
+                    <a class="d-block p-2" href="login.html">Login <i class="fa-solid fa-circle-user position-relative"><span id="accountmember" class="badge bg-info position-absolute" style="left:10px;top:-10px"></span></i></a>
                 </li>
             </ul>
         </div>
