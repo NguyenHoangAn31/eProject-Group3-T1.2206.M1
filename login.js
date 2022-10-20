@@ -72,11 +72,18 @@ function creataccount() {
 }
 
 
-function displaymember() {
-    var containxx = JSON.parse(sessionStorage.getItem('accountcurrent'))
-    document.getElementById('accountmember').innerHTML = containxx[0].name
+function signout(){
+    var contain = JSON.parse(sessionStorage.getItem('accountcurrent'));
+    contain.splice(contain,1);
+    sessionStorage.setItem('accountcurrent',JSON.stringify(contain));
+    
+    document.getElementById('accountmember').innerHTML = ''
 
 }
-displaymember()
+
+var containxx = JSON.parse(sessionStorage.getItem('accountcurrent'))
+document.getElementById('accountmember').innerHTML = containxx[0].name
+
+
 
 
