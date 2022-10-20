@@ -52,7 +52,7 @@
 
 
 
-                <form onsubmit="return checkaccount()">
+                <form action="index.html" onsubmit="return checkaccount()">
                     <div class="mb-2">
                         <label class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" required>
@@ -62,8 +62,8 @@
                         <input type="password" class="form-control" id="password" required>
                     </div>
                     <div class="mb-2 form-check">
-                        <input type="checkbox">
-                        <label class="form-check-label">Remember me </label>
+                        <input id="remember" type="checkbox">
+                        <label class="form-check-label" >Remember me </label>
                         <!-- <label class="text-danger"> &emsp; Incorrect account or password</label> -->
                     </div>
                     <button class="btn btn-primary" type="submit">Sign In</button>
