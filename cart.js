@@ -183,13 +183,17 @@ function displayCart() {
     <td colspan="2" class="text-center h4">Total Price : $<span id="total"></span> </td>
 
     <td> 
-    <a href="#!CheckOut" class="btn btn-success"> Checkout <i class="fa fa-angle-right"></i> </a> </td>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+    Check Out
+  </button>
+  </td>
 </tr>`
     document.getElementById('totalcount').innerHTML = totalcount;
     document.getElementById('showcart').innerHTML = output;
 
     document.getElementById('total').innerHTML = shoppingCart.total();
 
+    document.getElementById('checkout').innerHTML = shoppingCart.total();
 
 }
 
