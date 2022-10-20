@@ -22,20 +22,14 @@ function checkaccount() {
 
     if (listaccount.length == 0) {
         alert('Incorrect Account Or Password');
-        return flase
+        return false
     }
 
     else {
         for (var i in listaccount) {
             if (listaccount[i].name == checkobject.name && listaccount[i].password == checkobject.password) {
-                
-                
-                
                 accountcurrent.push(checkobject);
                 sessionStorage.setItem('accountcurrent', JSON.stringify(accountcurrent))
-
-
-
                 alert('Successfuly');
                 return true
             }
@@ -56,8 +50,8 @@ function creataccount() {
     var confirmpassword = document.getElementById('confirmpassword').value;
     var fvsl = firstname + lastname;
 
-    for(var i in listaccount){
-        if(listaccount[i].name == fvsl){
+    for (var i in listaccount) {
+        if (listaccount[i].name == fvsl) {
             alert('tai khoan da ton tai')
             return false
         }
@@ -66,7 +60,7 @@ function creataccount() {
         alert('Password Incorrect');
         return false
     }
-    
+
     else {
         creataccountobj.name = fvsl;
         creataccountobj.password = password;

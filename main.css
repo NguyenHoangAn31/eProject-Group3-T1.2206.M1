@@ -12,7 +12,7 @@ body {
     transition: .3s;
 }
 
-.header ul li a:hover {
+.header ul .hover:hover>a {
     color: gray;
     border-bottom: 1px solid black;
 }
