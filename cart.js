@@ -13,15 +13,15 @@ var shoppingCart = (function () {
     }
 
     function saveCart() {
-        localStorage.setItem('shoppingCarts', JSON.stringify(cart));
+        sessionStorage.setItem('shoppingCarts', JSON.stringify(cart));
     }
 
     function loadCart() {
-        cart = JSON.parse(localStorage.getItem('shoppingCarts'));
+        cart = JSON.parse(sessionStorage.getItem('shoppingCarts'));
     }
 
 
-    if (localStorage.getItem("shoppingCarts") != null) {
+    if (sessionStorage.getItem("shoppingCarts") != null) {
         loadCart();
     }
 

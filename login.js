@@ -15,12 +15,10 @@ accountcurrent = [];
 creataccountobj = {}
 
 function creataccount() {
-    var firstname = document.getElementById('firstname').value;
     var lastname = document.getElementById('lastname').value;
     var username = document.getElementById('username').value
     var password = document.getElementById('password').value;
     var confirmpassword = document.getElementById('confirmpassword').value;
-    var fvsl = firstname + lastname;
 
     for (var i in listaccount) {
         if (listaccount[i].username == username) {
@@ -34,7 +32,7 @@ function creataccount() {
     }
 
     else {
-        creataccountobj.name = fvsl;
+        creataccountobj.name = lastname;
         creataccountobj.username = username;
         creataccountobj.password = password;
         listaccount.push(creataccountobj);
