@@ -1,5 +1,6 @@
 
-var header = `<div class="header position-fixed top-0 end-0 start-0" style="z-index:3" >
+var header = `
+<div class="header position-fixed w-100 " style="z-index:3;transition: top 0.3s;top:0" id="navbarss">
 <nav class="navbar navbar-expand-lg bg-white">
     <div class="container">
         <a class="navbar-brand" href=""><img src="IMGS/main/logo_new.gif" width="150" height="40"></a>
@@ -34,7 +35,7 @@ var header = `<div class="header position-fixed top-0 end-0 start-0" style="z-in
                     <a class="d-block p-2" href="login.html">Login <i class="fa-solid fa-circle-user position-relative"><span id="accountmember" class="badge bg-info position-absolute" style="left:10px;top:-10px"></span></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="d-block p-2" onclick="signout()">Sign Out <i class="fa-solid fa-right-from-bracket"></i></a>
+                    <a href="index.html" class="d-block p-2" onclick="signout()">Sign Out <i class="fa-solid fa-right-from-bracket"></i></a>
                 </li>
             </ul>
         </div>
@@ -189,6 +190,17 @@ mang.forEach(element => {
 
 $("#checkcheck").html(check);
 
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbarss").style.top = "0";
+  } else {
+    document.getElementById("navbarss").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
 
 $('.owl-carousel').owlCarousel({

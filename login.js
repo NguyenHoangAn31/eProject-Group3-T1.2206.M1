@@ -22,7 +22,7 @@ function creataccount() {
 
     for (var i in listaccount) {
         if (listaccount[i].username == username) {
-            alert('tai khoan da ton tai')
+            alert('Account Already Exists')
             return false
         }
     }
@@ -37,7 +37,7 @@ function creataccount() {
         creataccountobj.password = password;
         listaccount.push(creataccountobj);
         sessionStorage.setItem('listaccount', JSON.stringify(listaccount))
-        alert('Sucessfuly !')
+        alert('Sucessful !')
         return true
     }
 }
@@ -60,7 +60,7 @@ function checkaccount() {
             if (listaccount[i].username == checkobject.name && listaccount[i].password == checkobject.password) {
                 accountcurrent.push(listaccount[i]);
                 sessionStorage.setItem('accountcurrent', JSON.stringify(accountcurrent))
-                alert('Successfuly !');
+                alert('Successful !');
                 return true
             }
         }
@@ -79,6 +79,8 @@ function signout(){
     sessionStorage.setItem('accountcurrent',JSON.stringify(contain));
     
     document.getElementById('accountmember').innerHTML = ''
+    alert('Successful Logout !');
+
 
 }
 

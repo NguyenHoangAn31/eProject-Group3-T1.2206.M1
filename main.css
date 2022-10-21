@@ -279,6 +279,12 @@ body {
     padding: 150px 0px 50px 0px;
 }
 
+@media only screen and (max-width:500px) {
+    .pageabout img {
+        width: 100%;
+    }
+}
+
 /*phancontact*/
 .pagecontact {
     padding: 75px 0px 75px 0px
