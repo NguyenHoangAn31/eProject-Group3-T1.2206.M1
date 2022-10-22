@@ -7,9 +7,6 @@ else {
 }
 
 
-
-
-
 checkobject = {}
 accountcurrent = [];
 creataccountobj = {}

@@ -1,49 +1,38 @@
 cart = [];
-
-
 var shoppingCart = (function () {
-
-
-    function haha(name, pricenew, imgsrc, count) {
+    function haha(name, pricenew, imgsrc, status , count) {
         this.name = name;
         this.pricenew = pricenew;
         this.imgsrc = imgsrc;
+        this.status = status;
         this.count = count;
-
     }
-
     function saveCart() {
         sessionStorage.setItem('shoppingCarts', JSON.stringify(cart));
     }
-
     function loadCart() {
         cart = JSON.parse(sessionStorage.getItem('shoppingCarts'));
     }
-
-
     if (sessionStorage.getItem("shoppingCarts") != null) {
         loadCart();
     }
 
-
-
     var obj = {};
 
-
-    //add  
-    obj.addItemToCart = function (name, pricenew, imgsrc, count) {
+    //Add product to cart
+    obj.addItemToCart = function (name, pricenew , imgsrc , status , count) {
         for (var i in cart) {
             if (cart[i].name === name) {
                 alert('Products Already In The Cart')
                 return;
             }
         }
-        var item = new haha(name, pricenew, imgsrc, count);
+        var item = new haha(name, pricenew, imgsrc , status , count);
         cart.push(item);
         saveCart();
     }
 
-    //remove
+    //Remove product from cart
     obj.removeItemFromCartAll = function (name) {
         for (var i in cart) {
             if (cart[i].name === name) {
@@ -53,7 +42,7 @@ var shoppingCart = (function () {
         }
         saveCart();
     }
-    //plus count
+    //Plus count
     obj.plus = function (name) {
         for (var i in cart) {
             if (name === cart[i].name) {
@@ -79,17 +68,9 @@ var shoppingCart = (function () {
         }
     }
 
-    //total 
-    obj.total = function () {
-        var total = 0;
-        for (var i in cart) {
-            total += cart[i].count * cart[i].pricenew
-        }
-        return total;
-    }
+    
+
     //total count
-
-
     obj.listCart = function () {
         var cartCopy = [];
         for (i in cart) {
@@ -103,6 +84,18 @@ var shoppingCart = (function () {
         }
         return cartCopy;
     }
+
+
+    //Price all
+    obj.total = function () {
+        var total = 0;
+        for (var i in cart) {
+            total += cart[i].count * cart[i].pricenew
+        }
+        return total;
+    }
+
+    
     return obj;
 
 })();
@@ -110,26 +103,28 @@ var shoppingCart = (function () {
 
 
 
-
-// Add item
+// Add item in homepage
 $('.add-to-cart').click(function (event) {
     event.preventDefault();
-
     var name = $(this).data('name');
     var imgsrc = $(this).data('imgsrc');
     var pricenew = Number($(this).data('pricenew'));
-    shoppingCart.addItemToCart(name, pricenew, imgsrc, 1);
+    var status = $(this).data('status');
+    shoppingCart.addItemToCart(name, pricenew, imgsrc, status , 1);
     displayCart();
+
 });
 
 
+//Add item in product detail
 $('.productdetail').on("click", ".addtocart", function (event) {
     event.preventDefault();
 
     var name = $(this).data('name');
     var imgsrc = $(this).data('imgsrc');
     var pricenew = Number($(this).data('pricenew'));
-    shoppingCart.addItemToCart(name, pricenew, imgsrc, 1);
+    var status = $(this).data('status');
+    shoppingCart.addItemToCart(name, pricenew, imgsrc, status , 1);
     displayCart();
 })
 
@@ -138,6 +133,8 @@ $('.productdetail').on("click", ".addtocart", function (event) {
 
 
 
+
+//show cart 
 function displayCart() {
 
     var cartArray = shoppingCart.listCart();
@@ -198,7 +195,7 @@ function displayCart() {
 }
 
 
-
+//delete product from card
 $('.show-cart').on("click", ".delete-item", function (event) {
     var name = $(this).data('name');
     shoppingCart.removeItemFromCartAll(name);
@@ -206,6 +203,7 @@ $('.show-cart').on("click", ".delete-item", function (event) {
 })
 
 
+//plus count
 $('.show-cart').on("click", ".plus", function (event) {
     var name = $(this).data('name');
 
@@ -213,7 +211,7 @@ $('.show-cart').on("click", ".plus", function (event) {
     displayCart();
 })
 
-
+//substract count
 $('.show-cart').on("click", ".subtract", function (event) {
     var name = $(this).data('name');
 
@@ -224,3 +222,4 @@ $('.show-cart').on("click", ".subtract", function (event) {
 
 
 displayCart()
+

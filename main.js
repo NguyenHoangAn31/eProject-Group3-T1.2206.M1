@@ -1,4 +1,4 @@
-
+//header
 var header = `
 <div class="header position-fixed w-100 " style="z-index:3;transition: top 0.3s;top:0" id="navbarss">
 <nav class="navbar navbar-expand-lg bg-white">
@@ -43,6 +43,8 @@ var header = `
 </nav>
 </div>`
 
+
+//footer
 var footer = `<div class="footer">
 <div class="row container m-auto py-5 mt-5">
     <div class="col-lg-3">
@@ -84,7 +86,7 @@ $("#footer").html(footer);
 
 AOS.init();
 
-
+//arr product
 var mang = [
     { "id": 0, "pricenew": 32.00, "priceold": 35.45, "imgsrc": "IMGS/problems/relievestress/medicine/medicine1.jpg", "imgsrc1": "IMGS/problems/relievestress/medicine/medicine11.jpg", "imgsrc2": "IMGS/problems/relievestress/medicine/medicine12.jpg", "imgsrc3": "IMGS/problems/relievestress/medicine/medicine13.jpg", "name": "OLLY Ultra Strength", "content": "<ul><li>OLLY ULTRA STRENGTH GOODBYE STRESS ULTRA SOFTGEL: Goodbye Stress Ultra Softgels are blended with powerful botanicals and nutrients to help you stay calm and centered</li> <br> <li>THE GOODS INSIDE: OLLY Goodbye Stress softgels are expertly blended with GABA, a fast working (within 30-60 minutes) active that supports a relaxed state of mind. L-Theanine is GABA's partner in sublime—it goes right to work in your brain to help you keep your cool, and Lemon Balm is a soothing botanical that has been used for centuries to help quiet the mind. Plus Ashwagandha for mood and energy support</li><br><li>HOW TO TAKE: Take 2 softgels per day with water as needed. Swallow whole, do not chew. Comes with 60 capsules per bottle for a 30 day supply</li></ul> ", "review": 200 },
     { "id": 1, "pricenew": 29.55, "priceold": 31.50, "imgsrc": "IMGS/problems/relievestress/medicine/medicine2.jpg", "imgsrc1": "IMGS/problems/relievestress/medicine/medicine21.jpg", "imgsrc2": "IMGS/problems/relievestress/medicine/medicine22.jpg", "imgsrc3": "IMGS/problems/relievestress/medicine/medicine23.jpg", "name": "LifeSeasons - Anxie-T", "content": "<ul><li></li>Feel More Calm And Relaxed: Anxie-T, our supplement for stress, nourishes the nervous system and supports the body's natural ability to deal with stress, nervousness, stress-related sleep problems and more, providing a sense of well-being.<br><li>Same-Day Natural Results: Anxie-T stress supplements can provide same-day results, including a feeling of calm without feeling tired. Through the use of Ashwagandha, GABA, Kava Kava, Theobromine, and L-Theanine, Anxie-T provides a feeling of relaxation that continues throughout the day, helping with normal activities and sleep.</li><br><li>Live Healthier And Happier: Take two Anxie-T stress support supplement capsules each morning, with or without food. Another capsule may be added in the evening for additional support. Talk to your healthcare provider about the serving size that is right for your body.</li></ul>", "review": 178 },
@@ -109,7 +111,7 @@ var mang = [
 ]
 
 
-
+//show product in page problems we treat
 var page1 = ""
 for (var i = 0; i < 5; i++) {
     page1 += `
@@ -174,7 +176,7 @@ $("#page4").html(page4)
 
 
 
-
+//show product in home page 
 var check = "";
 mang.forEach(element => {
     check += `
@@ -191,6 +193,8 @@ mang.forEach(element => {
 $("#checkcheck").html(check);
 
 
+
+//show hide navbar
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
@@ -202,7 +206,7 @@ var currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 
-
+//carousel
 $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
@@ -221,8 +225,8 @@ $('.owl-carousel').owlCarousel({
 })
 
 
+//check arr product detail in local
 product = []
-
 function productdetaillocal(id) {
     sessionStorage.setItem('productdetail', JSON.stringify(product));
     var xx = JSON.parse(sessionStorage.getItem('productdetail'));
@@ -232,6 +236,8 @@ function productdetaillocal(id) {
 }
 
 
+
+//show product detail
 function displayproductdetail() {
     var contai = JSON.parse(sessionStorage.getItem('productdetail'));
     var indexarr = contai[0]
@@ -294,6 +300,7 @@ function displayproductdetail() {
 displayproductdetail();
 
 
+//change image in produce detail
 function changeImage(element) {
     var main_prodcut_image = document.getElementById('main_product_image');
     main_prodcut_image.src = element.src;

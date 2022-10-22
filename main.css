@@ -1,10 +1,11 @@
-/*header*/
 body {
     margin: 0;
     font-family: var();
     box-sizing: border-box;
 }
 
+
+/*header*/
 .header ul a {
     text-decoration: none;
     color: black;
@@ -34,7 +35,6 @@ body {
     width: 290px;
 
 }
-
 .header .hidden li a {
     width: 270px;
 }
@@ -43,8 +43,6 @@ body {
     margin-left: 10px;
     background-color: rgb(240, 240, 240);
 }
-
-
 /*footer*/
 
 .footer a {
@@ -75,17 +73,11 @@ body {
         display: none;
     }
 }
-
-
-
-
 /*Our Doctor*/
-
 .ourdoctors .col-xl-9 p {
     padding-left: 50px;
     height: 250px;
 }
-
 @media screen and (max-width: 1200px) {
     .ourdoctors .col-xl-9 p {
         padding-left: 0;
@@ -93,47 +85,29 @@ body {
         height: 325px;
         font-size: 12px;
     }
-
-
 }
-
-
-
-
-/*Problems*/
-
+/*Problems We Treat*/
 .ourproblems .hoverimg {
     overflow: hidden;
     height: 225px;
 }
-
-
 .ourproblems img {
     height: 225px;
     width: 325px;
     transition: .3s;
 }
-
 .ourproblems img:hover {
     height: 235px;
     width: 335px;
 }
-
 .ourproblems p {
     height: 155px;
 }
-
-
-
 @media screen and (max-width: 992px) {
     .ourproblems p {
         height: 125px;
     }
 }
-
-
-
-
 /*ourproduct*/
 .ourproduct {
     max-width: 1000px;
@@ -147,11 +121,6 @@ body {
         margin: auto;
     }
 }
-
-
-
-
-
 /*testimonials*/
 .testimonials .content {
     margin-top: 50px;
@@ -166,15 +135,8 @@ body {
 
 
 
+/*all page problems we treat*/
 
-
-
-/*phần problems we treat*/
-/*phần relieve stress*/
-
-.problemsdetail{
-    padding-bottom: 50px;
-}
 .problemsdetail .head {
     position: relative;
 }
@@ -191,25 +153,34 @@ body {
 }
 
 @media only screen and (max-width:500px) {
-    .body img {
+    .problemsdetail img {
         width: 100%;
     }
 }
 
-/*phan product*/
+.problemsdetail .haha {
+    overflow-y: scroll;
+    height: 350px
+}
+
+.problemsdetail .haha::-webkit-scrollbar {
+    display: none;
+}
+
 .product .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 
 
-
-
-/*phần productdetail*/
-.sanphamchitiet .justify-content-between ul{
+/*productdetail*/
+.productdetail {
+    padding-top: 50px;
+}
+.productdetail .justify-content-between ul{
     list-style: none;
 }
-.sanphamchitiet .justify-content-between ul li{
+.productdetail .justify-content-between ul li{
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
@@ -217,10 +188,6 @@ body {
     border: 1px solid rgb(200, 200, 200);
 }
 
-
-.productdetail {
-    padding: 50px 0px 125px 0px;
-}
 
 .productdetail .rating {
     direction: rtl;
@@ -274,7 +241,7 @@ body {
 
 
 
-/*phanabout*/
+/*pageabout*/
 .pageabout {
     padding: 150px 0px 50px 0px;
 }
@@ -285,7 +252,7 @@ body {
     }
 }
 
-/*phancontact*/
+/*pagecontact*/
 .pagecontact {
     padding: 75px 0px 75px 0px
 }
@@ -298,12 +265,10 @@ body {
 
 
 
-/*phần pageshopping*/
+/*pagepageshopping*/
 .pageshopping {
     padding: 150px 0px 75px 0px;
 }
-
-/*phần checkout*/
 .checkout {
     padding-top: 125px;
 }
@@ -385,7 +350,7 @@ body {
 }
 
 
-/*phan signin*/
+/*pagesignin*/
 .pagelogin {
     height: 700px;
     padding-top: 150px;
@@ -396,4 +361,11 @@ body {
         height: 1000px;
         padding-top: 150px;
     }
+}
+
+
+
+
+.ourproduct .card button , .problemsdetail button{
+    width: 115px;
 }
