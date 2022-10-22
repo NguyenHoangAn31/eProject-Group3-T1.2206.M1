@@ -177,9 +177,9 @@ $("#page4").html(page4)
 
 
 //show product in home page 
-var check = "";
+var showproducthomepage = "";
 mang.forEach(element => {
-    check += `
+    showproducthomepage += `
     <div class="item">
             <div class="card text-center border-0"">
                 <a href="productdetail.html"><img onclick="productdetaillocal(${element.id})" src="${element.imgsrc}"  style="width:50%;margin:auto;margin-top:10px" height="175"></a>
@@ -190,7 +190,7 @@ mang.forEach(element => {
     </div>`;
 });
 
-$("#checkcheck").html(check);
+$("#showproducthomepage").html(showproducthomepage);
 
 
 
@@ -300,7 +300,7 @@ function displayproductdetail() {
 displayproductdetail();
 
 
-//change image in produce detail
+//change image in product detail
 function changeImage(element) {
     var main_prodcut_image = document.getElementById('main_product_image');
     main_prodcut_image.src = element.src;

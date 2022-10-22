@@ -187,9 +187,7 @@ function displayCart() {
 </tr>`
     document.getElementById('totalcount').innerHTML = totalcount;
     document.getElementById('showcart').innerHTML = output;
-
     document.getElementById('total').innerHTML = shoppingCart.total();
-
     document.getElementById('checkout').innerHTML = shoppingCart.total();
 
 }
