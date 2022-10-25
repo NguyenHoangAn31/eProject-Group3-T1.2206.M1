@@ -112,7 +112,6 @@ $('.add-to-cart').click(function (event) {
     var status = $(this).data('status');
     shoppingCart.addItemToCart(name, pricenew, imgsrc, status , 1);
     displayCart();
-
 });
 
 
@@ -127,6 +126,10 @@ $('.productdetail').on("click", ".addtocart", function (event) {
     shoppingCart.addItemToCart(name, pricenew, imgsrc, status , 1);
     displayCart();
 })
+
+
+
+
 
 
 
@@ -158,9 +161,9 @@ function displayCart() {
 
         <td>
           <div class="btn-group" style="margin-top:38px">
-            <button  data-name="${v.name}" type="button" class="btn btn-outline-primary subtract" style="border-right: none;">-</button>
-            <input type="button" value="${v.count}" class="btn btn-outline-primary" style="border-left: none;border-right: none;">
-            <button data-name="${v.name}" type="button" class="btn btn-outline-primary plus" style="border-left: none;">+</button>
+            <button  data-name="${v.name}" type="button" class="btn btn-outline-primary border-end-0 subtract">-</button>
+            <input type="button" value="${v.count}" class="btn btn-outline-primary border-end-0 border-start-0">
+            <button data-name="${v.name}" type="button" class="btn btn-outline-primary border-start-0 plus">+</button>
           </div>
         </td>
 
@@ -219,5 +222,21 @@ $('.show-cart').on("click", ".subtract", function (event) {
 
 
 
+
+
 displayCart()
 
+
+function removecart(){
+    sessionStorage.setItem('shoppingCarts', '[]');
+    var number =  document.getElementById('number').value;
+    var name = document.getElementById('name').value;
+    var sdate = document.getElementById('sdate').value;
+    var expdate = document.getElementById('expdate').value;
+    var passw = document.getElementById('passw').value;
+
+    if(number!='' && name !='' && sdate!='' && expdate != '' && passw!=''){
+        alert('successful !')
+        return true
+    }
+}

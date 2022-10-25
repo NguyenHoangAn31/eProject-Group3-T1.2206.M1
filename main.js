@@ -54,7 +54,7 @@ var footer = `<div class="footer">
             without drugs or surgery.</p>
     </div>
     <div class="col-lg-3">
-        <h3>Userful Links <i class="fa-solid fa-link"></i></h3>
+        <h3>Useful Links <i class="fa-solid fa-link"></i></h3>
         <a href="">How It Works</a>
         <a href="">Reviews</a>
         <a href="">Term & Conditions</a>
@@ -304,4 +304,15 @@ displayproductdetail();
 function changeImage(element) {
     var main_prodcut_image = document.getElementById('main_product_image');
     main_prodcut_image.src = element.src;
+}
+
+
+function contact(){
+    var name = document.getElementById('namecontact').value
+    var mail =  document.getElementById('mailcontact').value
+    var phone = document.getElementById('phonecontact').value
+    var message =  document.getElementById('messagecontact').value
+    if(name != '' && mail != '' && phone !='' && message !=''){
+        alert('Sucessful !');
+    }
 }
