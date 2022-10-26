@@ -228,15 +228,7 @@ displayCart()
 
 
 function removecart(){
-    sessionStorage.setItem('shoppingCarts', '[]');
-    var number =  document.getElementById('number').value;
-    var name = document.getElementById('name').value;
-    var sdate = document.getElementById('sdate').value;
-    var expdate = document.getElementById('expdate').value;
-    var passw = document.getElementById('passw').value;
-
-    if(number!='' && name !='' && sdate!='' && expdate != '' && passw!=''){
-        alert('successful !')
-        return true
-    }
+    sessionStorage.setItem('shoppingCarts','[]')
+    alert('successful !')
+     
 }

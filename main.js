@@ -308,11 +308,5 @@ function changeImage(element) {
 
 
 function contact(){
-    var name = document.getElementById('namecontact').value
-    var mail =  document.getElementById('mailcontact').value
-    var phone = document.getElementById('phonecontact').value
-    var message =  document.getElementById('messagecontact').value
-    if(name != '' && mail != '' && phone !='' && message !=''){
-        alert('Sucessful !');
-    }
+    alert('Sucessful !')
 }
