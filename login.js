@@ -70,13 +70,17 @@ function checkaccount() {
 
 
 
-function signout(){
-    var contain = JSON.parse(sessionStorage.getItem('accountcurrent'));
-    contain.splice(contain,1);
-    sessionStorage.setItem('accountcurrent',JSON.stringify(contain));
-    
-    document.getElementById('accountmember').innerHTML = ''
-    alert('Successful Logout !');
+function signout() {
+    if (JSON.parse(sessionStorage.getItem('accountcurrent')) != null){
+        var contain = JSON.parse(sessionStorage.getItem('accountcurrent'));
+        contain.splice(contain, 1);
+        sessionStorage.setItem('accountcurrent', JSON.stringify(contain));
+
+        document.getElementById('accountmember').innerHTML = ''
+        alert('Successful Logout !');
+        return false
+    }
+
 
 
 }
